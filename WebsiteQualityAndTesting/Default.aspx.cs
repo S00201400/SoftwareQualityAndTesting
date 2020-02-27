@@ -17,13 +17,13 @@ namespace WebsiteQualityAndTesting
 
         protected void Button1_Click2(object sender, EventArgs e)
         {
-            int driverAge = Functions.Functions.CalculateDriverAge(Request.Form.Get("dateOfBirth"));
+            int driverAge = Functions.Functions.CalculateDriverAge(Request.Form.Get("DOB"));
             if (driverAge < 18)
                 Label1.Text = "No Quote Possible";
             else
             {
                 double premium = Functions.Functions.BasicPremium(Request.Form.Get("coverType")) *
-                    Convert.ToDouble(Request.Form.Get("vehicleValue"));
+                    Convert.ToDouble(Request.Form.Get("valueOfCar"));
                 if (driverAge <= 25)
                 {
                     premium += premium * 0.10;

@@ -6,25 +6,25 @@
         <form method="post" enctype="multipart/form-data">
   <fieldset>
     <div class="form-group">
-      <label for="vehicleValue">Vehicle value</label>
-      <input type="number" class="form-control" id="vehicleValue" placeholder="Enter vehicle value" name="vehicleValue" min="0"
+      <label for="valueOfCar">Vehicle value</label>
+      <input type="number" class="form-control" id="valueOfCar" placeholder="Enter the value of the car" name="valueOfCar" min="0"
       required>
     </div>
     <div class="form-group">
-      <label for="selectCover">Select cover type</label>
-      <select class="form-control" id="selectCover" name="coverType" required>
+      <label for="coverType">Select the cover type</label>
+      <select class="form-control" id="coverType" name="coverType" required>
         <option>Comprehensive</option>
         <option>Third party</option>
       </select>
     </div>
     <div class="form-group">
-      <label for="dateOfBirth">Date of birth</label>
-      <input type="date" class="form-control" id="dateOfBirth" placeholder="Enter your date of birth" name="dateOfBirth"
+      <label for="DOB">Date of birth</label>
+      <input type="date" class="form-control" id="DOB" placeholder="Enter your date of birth" name="DOB"
       required>
     </div>
     <div class="form-group">
-      <label for="penaltyPointsValue">Penalty Points</label>
-      <input type="number" class="form-control" id="penaltyPointsValue" placeholder="Enter your penalty points"
+      <label for="penaltyPoints">Penalty Points</label>
+      <input type="number" class="form-control" id="penaltyPoints" placeholder="Enter the number of penalty points"
              name="penaltyPoints" min="0" required>
     </div>
     <asp:Button ID="Button1" runat="server" OnClick="Button1_Click2" Text="Submit" />
