@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace WebsiteQualityAndTesting.Functions
 {
@@ -11,9 +13,12 @@ namespace WebsiteQualityAndTesting.Functions
         {
             DateTime driverDateOfBirth = DateTime.Parse(DOB);
             DateTime currentDate = DateTime.Now;
-            return (currentDate.Year - driverDateOfBirth.Year - 1) +
-            (((currentDate.Month > driverDateOfBirth.Month) ||
-            ((currentDate.Month == driverDateOfBirth.Month) && (currentDate.Day >= driverDateOfBirth.Day))) ? 1 : 0);
+            int age = 0;
+            age = DateTime.Now.Year - driverDateOfBirth.Year;
+            if (DateTime.Now.DayOfYear < driverDateOfBirth.DayOfYear)
+                age = age - 1;
+
+            return age;
         }
         public static double BasicPremium(string coverType)
         {
@@ -32,5 +37,15 @@ namespace WebsiteQualityAndTesting.Functions
             else if (penaltyPoints > 12)
                 quotePossible = false;
         }
+
+        public static void HandleDriverAge(int driverAge, ref double premium, ref bool quotePossible)
+        {
+            if (driverAge < 18)
+                quotePossible = false;
+            else if (driverAge < 25)
+                premium += premium * 0.10;
+        }
+
+
     }
 }
